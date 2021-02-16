@@ -1,13 +1,11 @@
 import Component from "./Component.js";
 
-let Task = function(props) {
-  this.HTML = `<div class="task" data-task-id="${props.task.id}">${props.task.text}</div>`;
-
-  Component.call(this, this.HTML);
+let Task = class extends Component {
+  constructor(props) {
+    super();
+    
+    this.HTML = `<div class="task" data-task-id="${props.task.id}">${props.task.text}</div>`;
+  };
 };
-
-Task.prototype = Object.create(Component.prototype);
-
-Task.prototype.constructor = Task;
 
 export default Task;

@@ -1,11 +1,13 @@
-let Component = function(HTML) {
-  this.HTML = HTML || "";
+const Component = class {
+  constructor(HTML) {
+    this.HTML = HTML || "";
+  };
+
+  state = {};
+
+  toString = function() {
+    return this.HTML;
+  };
 };
-
-Component.prototype.state = {};
-
-Component.prototype.toString = function() {
-  return this.HTML;
-}
 
 export default Component;

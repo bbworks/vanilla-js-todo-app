@@ -1,16 +1,14 @@
 import Component from "./Component.js";
 import Task from "./Task.js";
 
-let Tasks = function(props) {
-  this.HTML = `<div class="task-container">
-  ${props.tasks.map(task=>new Task({task: task})).join("\r\n")}
-</div>`;
+let Tasks = class extends Component {
+  constructor(props) {
+    super();
 
-  Component.call(this, this.HTML);
+    this.HTML = `<div class="task-container">
+    ${props.tasks.map(task=>new Task({task: task})).join("\r\n")}
+  </div>`;
+  };
 };
-
-Tasks.prototype = Object.create(Component.prototype);
-
-Tasks.prototype.constructor = Tasks;
 
 export default Tasks;
