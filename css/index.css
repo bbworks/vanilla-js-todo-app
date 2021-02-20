@@ -2,6 +2,10 @@
   padding: 1rem 2rem;
 }
 
+.task {
+  padding: 0.25rem 0.5rem;
+}
+
 .task.reminder {
   border-left: 2px solid green;
 }
