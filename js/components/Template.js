@@ -1,10 +1,15 @@
-import Component from "./Component.js";
+import Component from "./base/Component.js"
 
-let Template = class extends Component {
+const Template = class extends Component {
   constructor(props) {
-    super();
+    super(props);
+    this.init();
+  }
 
-    this.HTML = ``;
+  render = function() {
+    return (
+      `<div>${this.props.title}</div>`
+    );
   };
 };
 

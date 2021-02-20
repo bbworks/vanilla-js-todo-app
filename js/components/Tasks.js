@@ -1,13 +1,20 @@
-import Component from "./Component.js";
-import Task from "./Task.js";
+import Component from "./base/Component.js"
+import Task from "./Task.js"
 
-let Tasks = class extends Component {
+const Tasks = class extends Component {
   constructor(props) {
-    super();
+    super(props);
+    this.init();
+  }
 
-    this.HTML = `<div class="task-container">
-    ${props.tasks.map(task=>new Task({task: task})).join("\r\n")}
-  </div>`;
+  render = function() {
+    return [
+      `<div class="task-container">`,
+        [
+          ...this.props.tasks.map(task=>new Task({task: task}))
+        ],
+      `</div>`,
+      ];
   };
 };
 

@@ -1,4 +1,4 @@
-import State from "./_State.js"
+import State from "./State.js"
 
 const Component = class {
   constructor(props) {
