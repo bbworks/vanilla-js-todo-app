@@ -1,12 +1,20 @@
 const Component = class {
-  constructor(HTML) {
-    this.HTML = HTML || "";
+  constructor(props = {}) {
+    this.HTML = "";
+    this.state = {};
   };
 
-  state = {};
+  render = function() {
+    return this.HTML;
+  };
 
   toString = function() {
-    return this.HTML;
+    return this.render();
+  };
+
+  setState = function(newState) {
+    this.state = newState;
+    console.log("render()");
   };
 };
 
